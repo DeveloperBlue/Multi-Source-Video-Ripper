@@ -14,8 +14,8 @@ Supported websites include but are not limited to:
 
 ***
 
-<img src="http://pluspng.com/img-png/nodejs-logo-png-node-js-development-296.png" alt="NodeJS Logo" width="256px">
+<img src="http://pluspng.com/img-png/nodejs-logo-png-node-js-development-296.png" alt="NodeJS Logo" width="128px">
 
-<img src="https://www.technicalpursuit.com/docs/images/electron.png" alt="Electron Logo" width="256px">
+<img src="https://www.technicalpursuit.com/docs/images/electron.png" alt="Electron Logo" width="128px">
 
-<img src="https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png" alt="BootStrap Logo" width="256px">
+<img src="https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png" alt="BootStrap Logo" width="128px">
