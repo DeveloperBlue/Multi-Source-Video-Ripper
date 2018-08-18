@@ -1,0 +1,59 @@
+.topbar {
+  width:100%;
+  height:30px;
+  background-color:#000C29;
+  -webkit-app-region:drag;
+  position:relative;
+}
+
+.topbar-important {
+  padding:2px;
+  float:right;
+}
+
+.topbar-important-button {
+  height:25px;
+  width:25px;
+  margin-left:2px;
+  font-size:12px;
+  padding:0px;
+  border-radius:2px;
+  -webkit-app-region:no-drag;
+}
+
+.topbar-btn {
+  background-color:#000C27;
+  border:1px;
+  border-radius:0px;
+  padding-left:10px;
+  padding-right:10px;
+  height:100%;
+  line-height:14px;
+  font-size:10px;
+  min-width:70px;
+  color:#fff;
+  -webkit-app-region:no-drag;
+}
+
+.topbar-dropdown {
+  height:calc(100% - 2px);
+  padding:0px;
+}
+
+.topbar-dropdown-item {
+  padding-left:10px;
+  font-size:12px;
+}
+
+.topbar-dropdown-divider {
+  margin-left:5px;
+  margin-right:5px;
+  color:#36353a;
+}
+
+.topbar-dropdown-menu {
+  border-radius:0px;
+  margin:0;
+  background-color:rgba(52, 58, 64, 0.7);
+}
+

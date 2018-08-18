@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTubeDL</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/typicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/topbar.css">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="dropdown d-inline-block topbar-btn topbar-dropdown"><button class="btn btn-dark dropdown-toggle topbar-btn" data-toggle="dropdown" aria-expanded="false" type="button">Menu&nbsp;</button>
+            <div class="dropdown-menu topbar-dropdown-menu" role="menu"><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-about">About Application</a><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-reload">Reload Application</a>
+                <div
+                    class="dropdown-divider topbar-dropdown-divider" role="presentation"></div><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-quit">Quit Application</a></div>
+    </div><button class="btn btn-dark topbar-btn" type="button" id="menu-app-open_dir">Open Directory</button><button class="btn btn-dark topbar-btn" type="button" id="menu-app-preferences">Preferences</button>
+    <div class="dropdown d-inline-block topbar-btn topbar-dropdown"><button class="btn btn-dark dropdown-toggle topbar-btn" data-toggle="dropdown" aria-expanded="false" type="button" id="menu-app-help">Help&nbsp;</button>
+        <div class="dropdown-menu topbar-dropdown-menu" role="menu"><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-logs">Open Logs</a><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-report">Report a Bug</a>
+            <div
+                class="dropdown-divider topbar-dropdown-divider" role="presentation"></div><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-supported">Supported Websites</a><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#"
+            id="menu-app-check_updates">Check for Updates</a></div>
+    </div>
+    <div class="topbar-important"><button class="btn btn-dark topbar-important-button" type="button" id="app-minimize"><i class="fa fa-window-minimize"></i></button><button class="btn btn-dark topbar-important-button" type="button" id="app-resize"><i class="fa fa-window-restore"></i></button>
+        <button
+            class="btn btn-dark topbar-important-button" type="button" id="app-quit"><i class="fa fa-close"></i></button>
+    </div>
+    </div>
+    <div class="content">
+        <div class="input-setup-div hidden">
+            <div class="program-title-div">
+                <h4 class="text-white heading-main">Multi-Source Video Ripper<i class="fa fa-globe"></i></h4>
+                <p class="text-center text-black-50 program-title-author"><strong>Michael Rooplall</strong></p>
+            </div>
+            <div>
+                <h5 class="text-white setup-heading">Download Destination</h5>
+                <p class="text-white-50 setup-subheading">Where would you like your files to be saved to?</p>
+                <div class="setup-bar-div"><input type="text" placeholder="Select a Destination . . ." class="setup-destination-p"><button class="btn btn-secondary setup-change-btn" type="button">Change</button></div>
+            </div>
+            <div class="form-check setup-checkbox-remember"><input class="form-check-input" type="checkbox" checked="" id="formCheck-1"><label class="form-check-label text-white setup-checkbox-remember" for="formCheck-1">Remember this destination</label></div>
+            <div class="setup-btn-div"><button class="btn btn-dark setup-btn-proceed" type="button">Continue</button></div>
+        </div>
+        <div class="input-main-div">
+            <div class="program-title-div">
+                <h4 class="text-white heading-main">Multi-Source Video Ripper<i class="fa fa-globe"></i></h4>
+                <p class="text-center text-black-50 program-title-author"><strong>Michael Rooplall</strong></p>
+            </div>
+            <div class="input-block"><input class="form-control-sm input-bar" type="url" placeholder="Enter a URL to Download">
+                <div class="btn-group input-dropdown"><button class="btn btn-primary proceed-btn" type="button">Download <strong>.mp3</strong></button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split input-dropdown-drop" data-toggle="dropdown" aria-expanded="false" type="button"></button>
+                    <div
+                        class="dropdown-menu" role="menu" id="converter-extension-dropdown">
+                        <h6 class="dropdown-header" role="presentation">Audio</h6><a class="dropdown-item" role="presentation" href="#">.mp3</a><a class="dropdown-item" role="presentation" href="#">.wav</a><a class="dropdown-item" role="presentation" href="#">.ogg</a><a class="dropdown-item" role="presentation"
+                            href="#">.aac</a>
+                        <h6 class="dropdown-header" role="presentation">Video</h6><a class="dropdown-item" role="presentation" href="#">.mp4</a><a class="dropdown-item" role="presentation" href="#">.webm</a><a class="dropdown-item" role="presentation" href="#">.avi</a><a class="dropdown-item" role="presentation"
+                            href="#">.flv</a><a class="dropdown-item" role="presentation" href="#">.3gp</a><a class="dropdown-item" role="presentation" href="#">.m4a</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="input-loading-div hidden">
+        <div class="program-title-div">
+            <h4 class="text-white heading-main">Multi-Source Video Ripper<i class="fa fa-globe"></i></h4>
+            <p class="text-center text-black-50 program-title-author"><strong>Michael Rooplall</strong></p>
+        </div><img src="assets/img/loading.gif" class="loading-gif"></div>
+    <div class="content-main-div hidden"><button class="btn btn-dark return-btn" type="button">Change Source<i class="typcn typcn-arrow-back-outline"></i></button>
+        <div class="details-div">
+            <h6 class="text-white-50 details-h">Title:</h6>
+            <p class="text-nowrap text-white details-p" id="details-title"></p>
+        </div>
+        <div class="details-div">
+            <h6 class="text-white-50 details-h">Author:</h6>
+            <p class="text-nowrap text-white details-p" id="details-author"></p>
+        </div>
+        <div class="details-div">
+            <h6 class="text-white-50 details-h">Length:</h6>
+            <p class="text-nowrap text-white details-p" id="details-length"></p>
+        </div><img src="assets/img/background-texture.png" class="image-preview"><button class="btn btn-success download-btn" type="button">Download<i class="fa fa-download"></i></button>
+        <div class="progress hidden" id="download-progress-bar">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="sr-only">50%</span></div>
+        </div>
+        <div class="download-complete-div hidden">
+            <h5 class="text-white">Download Completed</h5><a href="#" class="download-complete-link">Open Directory<i class="fa fa-folder-open-o"></i></a></div>
+    </div>
+    </div>
+    <div class="secondary-content">
+        <div class="supported-sources-div hidden">
+            <div class="program-title-div">
+                <h4 class="text-white heading-main">Multi-Source Video Ripper<i class="fa fa-globe"></i></h4>
+                <p class="text-center text-black-50 program-title-author"><strong>Michael Rooplall</strong></p>
+            </div><button class="btn btn-dark supported-sources-return" type="button"><i class="fa fa-arrow-circle-o-left"></i>Go Back To Converting</button>
+            <div class="supported-sources-search-div"><input class="form-control-sm supported-sources-search-input" type="text" placeholder="Search available sources"><button class="btn btn-danger supported-sources-clear-button" type="button"><i class="fa fa-remove"></i></button></div>
+            <div class="supported-sources-div-list">
+                <p class="text-white supported-sources-div-item">Paragraph</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
