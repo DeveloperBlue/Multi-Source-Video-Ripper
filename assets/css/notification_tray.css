@@ -1,0 +1,56 @@
+.notification_tray {
+  position:absolute;
+  width:260px;
+  right:5px;
+  bottom:25px;
+  overflow:hidden;
+}
+
+.notification {
+  color:#fff;
+  width:100%;
+  height:auto;
+  border:1px solid #555;
+  background-color:#222;
+  border-radius:2px;
+  display:inline-block;
+  padding:5px;
+  position:relative;
+  margin-top:5px;
+}
+
+.notification_title {
+  font-weight:bold;
+  font-family:'ABeeZee';
+  font-size:14px;
+}
+
+.notification_text {
+  font-size:12px;
+  margin:0;
+  font-family:'ABeeZee';
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.notification_button {
+  border-radius:0px;
+  font-family:'ABeeZee';
+  font-size:12px;
+  padding:10px;
+  line-height:6px;
+  width:100%;
+}
+
+.notification_close {
+  padding:0px;
+  margin:4px;
+  font-size:12px;
+  background-color:rgba(0,0,0,0);
+  position:absolute;
+  top:0px;
+  right:0px;
+  border:0;
+  width:14px;
+}
+

@@ -17,6 +17,84 @@ var pane_map = {
 
 var cached_extractors;
 
+function notify(title, message, option, option_callback, timeout, notification_color){
+
+	/*
+
+		string 		title
+		string 		message
+		string 		option
+		function 	option_callback
+		int 		timeout
+		string 		notification_color
+					// primary, success, danger, warning, white
+
+
+	*/
+
+	var notification_div = $("<div>").addClass("notification");
+	var notification_title = $("<h6>" + title + "</h6>").addClass("notification_title").addClass("text-primary");
+
+	if (notification_color != null){
+		$(notification_title).addClass("text-" + notification_color.toLowerCase());
+	} else {
+		$(notification_title).addClass("text-primary");
+	}
+
+	var notification_message = $("<p>" + message + "</p>").addClass("notification_text");
+
+	var notification_close = $("<button>").addClass("notification_close").addClass("text-white");
+	$(notification_close).append("<i class=\"fa fa-close\"></i>");
+
+	$(notification_div).append(notification_title);
+	$(notification_div).append(notification_message);
+	$(notification_div).append(notification_close);
+
+	var didCloseNotification = false;
+
+	function closeNotification(){
+		if (didCloseNotification == false){
+			didCloseNotification = true;
+			$(notification_div).animate({
+				"margin-left" : "100%"
+			},{
+				duration: 400,
+				easing : "swing",
+				complete: function() {
+					$(this).remove();
+				},
+				fail : function() {
+					$(this).remove();
+				}
+			});
+		}
+	}
+
+	notification_close.click(closeNotification);
+
+	if (option != null){
+		var notification_trigger = $("<button>" + option + "</button>").addClass("notification_button");
+		$(notification_div).append(notification_trigger);
+
+		notification_trigger.click(option_callback);
+	}
+
+	if (timeout != "#inf"){
+		if (!isNaN(parseInt(timeout))){
+			timeout = parseInt(timeout);
+		} else {
+			timeout = 12000;
+		}
+
+		setTimeout(function() {
+			closeNotification();
+		}, timeout);
+	}
+
+	$(".notification_tray").append(notification_div);
+
+}
+
 
 function showPane(pane){
 	
@@ -126,7 +204,7 @@ $(window).ready(function(){
 	$(".proceed-btn").click(function(){
 
 		if ($(".input-bar").val().replace(/ /g, "") == ""){
-			console.log("Invalid URL");
+			notify("Invalid URL", "Please enter a valid URL to download.");
 			return;
 		}
 
