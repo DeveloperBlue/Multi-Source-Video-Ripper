@@ -4,7 +4,6 @@ body {
   background-image:url("../../assets/img/background-texture.png");
   background-size:540px;
   height:100%;
-  /*position:relative;*/
   overflow:hidden;
 }
 
@@ -46,6 +45,7 @@ body {
   margin:0 auto;
   margin-top:40px;
   max-width:700px;
+  padding:10px;
 }
 
 .secondary-content {
@@ -91,7 +91,7 @@ body {
   margin-bottom:0px;
 }
 
-.fa.fa-download, .fa.fa-play-circle-o, .fa-globe, .typcn, .fa-folder-open-o {
+.fa.fa-download, .fa.fa-play-circle-o, .fa-globe, .typcn, .fa-folder-open-o, .fa-github {
   margin-left:6px;
 }
 
@@ -237,5 +237,23 @@ body {
   position:absolute;
   bottom:0px;
   background-color:#555;
+}
+
+.version-tag {
+  font-size:12px;
+  padding:0;
+  margin:0;
+  line-height:20px;
+  margin-left:4px;
+  width:40px;
+  display:inline-block;
+}
+
+.footer_project_link {
+  height:20px;
+  line-height:0px;
+  font-size:12px;
+  float:right;
+  color:#00BFFF;
 }
 

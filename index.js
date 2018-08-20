@@ -1,4 +1,5 @@
 /*
+
 	TO DO
 
 	If the requested format is not available,
@@ -24,21 +25,16 @@
 	Set and Open download directory
 	Show Developer's name
 	Show GitHub repository
-	Show all available source websites with search (Scrape them)
 
 	Reject live videos
 
 	REWORK
-
-	Intro screen is TITLE above the URL input
 
 	POSSIBLE FUTURE
 	Download thumbnail?
 	Rate Limit
 	Auto Update
 	Logging downloads
-
-
 
 */
 
@@ -103,14 +99,13 @@ function createWindow () {
 
 */
 
-function createLog(log_data){
+function createLog(filename, log_data){
 
-	fs.writeFile("./logs/log.txt", log_data, function(e) {
-		if(e) {
+	fs.writeFile("./logs/" + filename, log_data, function(e) {
+		if (e) {
 			return console.log(e);
 		}
 
-		console.log("Created Log");
 	}); 
 
 }
@@ -119,6 +114,10 @@ function selectDirectory() {
 	dialog.showOpenDialog(mainWindow, {
 		properties: ['openDirectory']
 	})
+}
+
+function sanitizeMediaTitle(title){
+	return title.trim().replace(/[^\w\s]/gi, "");
 }
 
 /*
@@ -160,7 +159,7 @@ ipcMain.on("message", (event, arg) => {
 
 				}
 
-				createLog(JSON.stringify(info, null, "\t"));
+				createLog("last_download_dump.json", JSON.stringify(info, null, "\t"));
 
 				lastPushedURL.url = url;
 				lastPushedURL.info = info;
@@ -180,6 +179,10 @@ ipcMain.on("message", (event, arg) => {
 
 		var finalSize;
 		var chunkLength = 0;
+
+		var cur_date = new Date();
+
+		createLog(cur_date.getMonth() + "-" + cur_date.getDate() + "-" + cur_date.getFullYear() + "_" + cur_date.getHours() + "-" + cur_date.getMinutes() + ".txt", lastPushedURL.url);
 
 		download.on("info", function(info){
 			console.log("Download Info First of Size ", info.size);
@@ -201,7 +204,7 @@ ipcMain.on("message", (event, arg) => {
 			message("download_completed");
 		})
 
-		download.pipe(fs.createWriteStream(lastPushedURL.info.title + "." + requestedExtension));
+		download.pipe(fs.createWriteStream(sanitizeMediaTitle(lastPushedURL.info.title) + "." + requestedExtension));
 	
 	} else if (request == "select_directory"){
 

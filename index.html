@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTubeDL</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/typicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
@@ -21,15 +22,15 @@
 <body>
     <div class="topbar">
         <div class="dropdown d-inline-block topbar-btn topbar-dropdown"><button class="btn btn-dark dropdown-toggle topbar-btn" data-toggle="dropdown" aria-expanded="false" type="button">Menu&nbsp;</button>
-            <div class="dropdown-menu topbar-dropdown-menu" role="menu"><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-about">About Application</a><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-reload">Reload Application</a>
+            <div class="dropdown-menu topbar-dropdown-menu" role="menu"><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-about">About Application</a><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-reload">Reload Application<span class="topbar-dropdown-item-shortcut">Ctrl + R</span></a>
                 <div
-                    class="dropdown-divider topbar-dropdown-divider" role="presentation"></div><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-quit">Quit Application</a></div>
+                    class="dropdown-divider topbar-dropdown-divider" role="presentation"></div><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-quit">Quit Application<span class="topbar-dropdown-item-shortcut">Ctrl + Q</span></a></div>
     </div><button class="btn btn-dark topbar-btn" type="button" id="menu-app-open_dir">Open Directory</button><button class="btn btn-dark topbar-btn" type="button" id="menu-app-preferences">Preferences</button>
     <div class="dropdown d-inline-block topbar-btn topbar-dropdown"><button class="btn btn-dark dropdown-toggle topbar-btn" data-toggle="dropdown" aria-expanded="false" type="button" id="menu-app-help">Help&nbsp;</button>
         <div class="dropdown-menu topbar-dropdown-menu" role="menu"><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-logs">Open Logs</a><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-report">Report a Bug</a>
             <div
                 class="dropdown-divider topbar-dropdown-divider" role="presentation"></div><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#" id="menu-app-supported">Supported Websites</a><a class="dropdown-item text-white bg-dark topbar-dropdown-item" role="presentation" href="#"
-            id="menu-app-check_updates">Check for Updates</a></div>
+            id="menu-app-check_updates">Check for Updates<i class="fa fa-refresh hidden" id="menu-app-check_updates-icon"></i></a></div>
     </div>
     <div class="topbar-important"><button class="btn btn-dark topbar-important-button" type="button" id="app-minimize"><i class="fa fa-window-minimize"></i></button><button class="btn btn-dark topbar-important-button" type="button" id="app-resize"><i class="fa fa-window-restore"></i></button>
         <button
@@ -37,7 +38,7 @@
     </div>
     </div>
     <div class="content">
-        <div class="input-setup-div hidden">
+        <div class="input-setup-div">
             <div class="program-title-div">
                 <h4 class="text-white heading-main">Multi-Source Video Ripper<i class="fa fa-globe"></i></h4>
                 <p class="text-center text-black-50 program-title-author"><strong>Michael Rooplall</strong></p>
@@ -50,7 +51,7 @@
             <div class="form-check setup-checkbox-remember"><input class="form-check-input" type="checkbox" checked="" id="formCheck-1"><label class="form-check-label text-white setup-checkbox-remember" for="formCheck-1">Remember this destination</label></div>
             <div class="setup-btn-div"><button class="btn btn-dark setup-btn-proceed" type="button">Continue</button></div>
         </div>
-        <div class="input-main-div">
+        <div class="input-main-div hidden">
             <div class="program-title-div">
                 <h4 class="text-white heading-main">Multi-Source Video Ripper<i class="fa fa-globe"></i></h4>
                 <p class="text-center text-black-50 program-title-author"><strong>Michael Rooplall</strong></p>
@@ -102,9 +103,19 @@
                 <p class="text-white supported-sources-div-item">Paragraph</p>
             </div>
         </div>
+        <div class="program-about-div hidden">
+            <div class="program-title-div">
+                <h4 class="text-white heading-main">Multi-Source Video Ripper<i class="fa fa-globe"></i></h4>
+                <p class="text-center text-black-50 program-title-author"><strong>Michael Rooplall</strong></p>
+            </div><button class="btn btn-light supported-sources-return" type="button"><i class="fa fa-arrow-circle-o-left"></i>Go Back To Converting</button>
+            <p class="text-white-50">Version 0.9.3</p>
+            <p class="text-white"><em>Multi-Source-Video-Ripper</em> is a program that allow you to download various sources from a multitude of websites in various file formats. <br> <br>Built in NodeJS using Electron and YouTubeDL packages.</p>
+            <p class="text-white-50">© Michael Rooplall</p>
+        </div>
     </div>
     <div class="notification_tray"></div>
-    <div class="footer"></div>
+    <div class="footer">
+        <p class="text-white version-tag">v0.9.3</p><button class="btn btn-link footer_project_link" type="button">Project Source<i class="fab fa-github"></i></button></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>

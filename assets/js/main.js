@@ -11,7 +11,8 @@ var pane_map = {
 	"content" 		: "content-main-div",
 	"setup"			: "input-setup-div",
 	// "preferences"	: "",
-	"supported"		: "supported-sources-div"
+	"supported"		: "supported-sources-div",
+	"about"			: "program-about-div"
 
 }
 
@@ -83,7 +84,7 @@ function notify(title, message, option, option_callback, timeout, notification_c
 		if (!isNaN(parseInt(timeout))){
 			timeout = parseInt(timeout);
 		} else {
-			timeout = 12000;
+			timeout = 9000;
 		}
 
 		setTimeout(function() {
@@ -134,18 +135,32 @@ $(window).ready(function(){
 		remote.getCurrentWindow().close();
 	})
 
+	var window_state;
+
 	$("#app-resize").click(function(){
-		
+		if (window_state == "maximized"){
+			remote.getCurrentWindow().unmaximize();
+		} else {
+			remote.getCurrentWindow().maximize();
+		}
 	})
 
+	remote.getCurrentWindow().on("maximize", function(){
+		window_state = "maximized";
+	});
+
+	remote.getCurrentWindow().on("unmaximize", function(){
+		window_state = "normal";
+	});
+
 	$("#app-minimize").click(function(){
-		
+		remote.getCurrentWindow().minimize();
 	})
 
 	// Application Menu
 
 	$("#menu-app-about").click(function(){
-
+		showPane("about");
 	})
 
 	$("#menu-app-reload").click(function(){
@@ -396,6 +411,7 @@ ipcRenderer.on("message", (event, arg) => {
 
 	} else if (request == "download_completed"){
 
+		notify("Download Complete", "Your download has finished.", null, null, null, "success");
 		$(".download-complete-div").removeClass("hidden");
 		$(".return-btn").html("Convert Again <i class=\"typcn typcn-arrow-back-outline\"></i>");
 	

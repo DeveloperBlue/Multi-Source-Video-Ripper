@@ -43,6 +43,7 @@
 .topbar-dropdown-item {
   padding-left:10px;
   font-size:12px;
+  padding-right:2px;
 }
 
 .topbar-dropdown-divider {
@@ -54,6 +55,22 @@
 .topbar-dropdown-menu {
   border-radius:0px;
   margin:0;
-  background-color:rgba(52, 58, 64, 0.7);
+  min-width:170px;
+  background-color:#343a40;
+}
+
+.topbar-dropdown-item-shortcut {
+  color:#888;
+  float:right;
+  margin-right:5px;
+  margin-top:2px;
+  font-size:9px;
+}
+
+#menu-app-check_updates-icon {
+  float:right;
+  margin-top:3px;
+  margin-right:5px;
+  height:0px;
 }
 
